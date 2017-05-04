@@ -30,8 +30,8 @@ ggplot(data = diamonds.sample) +
 
 # Draw the same plot as above, but color each of the points based on their clarity.
 ggplot(data = diamonds.sample) +
-  geom_point(mapping = aes(x = carat, y = price, color=clarity))
-
+  geom_point(mapping = aes(x = carat, y = price, color=clarity, alpha=carat))
+#), alpha=.1
 
 # Draw the same plot as above, but for the entire `diamonds` data set. Note this may take
 # a few seconds to generate.
@@ -53,6 +53,7 @@ ggplot(data = diamonds.sample) +
 # point has an aesthetic _size_ based on the diamond's *`price`*
 ggplot(data = diamonds.sample) +
   geom_point(mapping = aes(x = carat, y = cut, size=price))
+
 
 # Try coloring the above plot based on the diamond's price!
 
