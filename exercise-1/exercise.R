@@ -35,20 +35,24 @@ ggplot(data = diamonds.sample) +
 
 # Draw the same plot as above, but for the entire `diamonds` data set. Note this may take
 # a few seconds to generate.
-
+ggplot(data = diamonds) +
+  geom_point(mapping = aes(x = carat, y = price, color=clarity))
 
 # Draw another scatter plot for `diamonds.sample` of price (y) by carat (x),
 # but with all of the dots colored "blue".
 # Hint: you'll need to set the color channel, not map a value to it!
-
+ggplot(data = diamonds) +
+  geom_point(mapping = aes(x = carat, y = price), color="blue")
 
 # Draw a scatter plot for `diamonds.sample` of `price` by `carat`, where each
 # point has an aesthetic _shape_ based on the diamond's `cut`.
-
+ggplot(data = diamonds.sample) +
+  geom_point(mapping = aes(x = carat, y = price, shape=cut))
 
 # Draw a scatter plot for `diamonds.sample` of *`cut`* by `carat`, where each
 # point has an aesthetic _size_ based on the diamond's *`price`*
-
+ggplot(data = diamonds.sample) +
+  geom_point(mapping = aes(x = carat, y = cut, size=price))
 
 # Try coloring the above plot based on the diamond's price!
 
